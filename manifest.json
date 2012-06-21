@@ -1,0 +1,22 @@
+{
+    "name":"Mobai",
+    "version":"0.1",
+    "permissions":
+    [
+	"tabs",
+	"http://*.renren.com/*"
+    ],
+    "browser_action":{
+	"default_icon":"bai.gif",
+	"default_title":"Mobai",
+	"default_popup":"pop.html"
+    },
+    "content_scripts":[
+	{
+	    "matches":["http://share.renren.com/*",
+                       "http://photo.renren.com/*"],
+            "js":["share.js"]
+	}
+    ]
+    
+}
