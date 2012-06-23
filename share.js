@@ -1,14 +1,14 @@
-var x=document.getElementById('miniEditorAction');
-var text="";
+var imgurl=chrome.extension.getURL("bai.gif");
+var $inp=$("#miniEditorTextarea");
+var $sub=$("#submit_comment");
+var addtxt="";
 for (i=1;i<=10;i++)
 {
-    text+="(mb)";
+    addtxt+="(mb)";
 }
-var obj=document.createElement('img');
-obj.src=chrome.extension.getURL("bai.gif");
-obj.addEventListener("click",function ()
-		     {
-			 var ta=document.getElementById('miniEditorTextarea');
-			 ta.innerHTML+=text;
-		     });
-x.appendChild(obj);
+var $img=$("<img />");
+$img.attr("src",imgurl).appendTo("#miniEditorAction")
+    .click(function (){
+	$inp.val($inp.val()+addtxt);
+	$sub.trigger('click');
+    });

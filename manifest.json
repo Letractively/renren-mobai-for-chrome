@@ -15,8 +15,9 @@
 	{
 	    "matches":["http://share.renren.com/*",
                        "http://photo.renren.com/*"],
-            "js":["share.js"]
+            "js":["jquery.js","share.js"]
 	}
-    ]
+    ],
+    "options_page":"opt.html"
     
 }
