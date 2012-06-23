@@ -18,7 +18,8 @@
 	},
 	{
 	    "matches":["http://www.renren.com/*"],
-	    "exclude_globs":["http://www.renren.com/"],
+	    "exclude_globs":["http://www.renren.com/",
+			    "http://www.renren.com/*/status/*"],
 	    "js":["js/jquery.js","js/main.js"]
 	}
     ],
