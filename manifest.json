@@ -1,6 +1,6 @@
 {
     "name":"Mobai",
-    "version":"0.1",
+    "version":"0.4",
     "permissions":
     [
 	"tabs",
@@ -9,15 +9,19 @@
     "browser_action":{
 	"default_icon":"bai.gif",
 	"default_title":"Mobai",
-	"default_popup":"pop.html"
+	"default_popup":"html/pop.html"
     },
     "content_scripts":[
 	{
-	    "matches":["http://share.renren.com/*",
-                       "http://photo.renren.com/*"],
-            "js":["jquery.js","share.js"]
+	    "matches":["http://share.renren.com/*"],
+            "js":["js/jquery.js","js/share.js"]
+	},
+	{
+	    "matches":["http://www.renren.com/*"],
+	    "exclude_globs":["http://www.renren.com/"],
+	    "js":["js/jquery.js","js/main.js"]
 	}
     ],
-    "options_page":"opt.html"
+    "options_page":"html/opt.html"
     
 }
