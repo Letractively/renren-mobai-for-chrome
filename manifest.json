@@ -20,6 +20,10 @@
 	    "exclude_globs":["http://www.renren.com/",
 			    "http://www.renren.com/*/status/*"],
 	    "js":["js/jquery.js","js/main.js"]
+	},
+	{
+	    "matches":["http://photo.renren.com/*"],
+	    "js":["js/jquery.js","js/photo.js"]
 	}
     ]
 }
