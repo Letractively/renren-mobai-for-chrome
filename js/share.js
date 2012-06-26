@@ -8,7 +8,7 @@ $(function (){
 	addtxt+="(mb)";
     }
     var $img=$("<img />");
-    $img.attr("src",imgurl).appendTo("#miniEditorAction")
+    $img.attr("src",imgurl).appendTo("div.m-editor-submit")
 	.click(function (){
 	    $inp.val($inp.val()+addtxt);
 	    $sub.trigger('click');
