@@ -1,6 +1,6 @@
 {
     "name":"Mobai",
-    "version":"0.4",
+    "version":"0.5",
     "permissions":
     [
 	"tabs",
@@ -21,6 +21,11 @@
 	    "exclude_globs":["http://www.renren.com/",
 			    "http://www.renren.com/*/status/*"],
 	    "js":["js/jquery.js","js/main.js"]
+	},
+	{
+	    "matches":["http://photo.renren.com/*",
+		       "http://blog.renren.com/*"],
+	    "js":["js/jquery.js","js/bandp.js"]
 	}
     ],
     "options_page":"html/opt.html"
