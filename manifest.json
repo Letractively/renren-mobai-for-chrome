@@ -8,7 +8,8 @@
     ],
     "browser_action":{
 	"default_icon":"bai.gif",
-	"default_title":"Mobai"
+	"default_title":"Mobai",
+	"default_popup":"html/pop.html"
     },
     "content_scripts":[
 	{
@@ -26,5 +27,7 @@
 		       "http://blog.renren.com/*"],
 	    "js":["js/jquery.js","js/bandp.js"]
 	}
-    ]
+    ],
+    "options_page":"html/opt.html"
+    
 }

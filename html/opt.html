@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>人人膜拜器设置页</title>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/opt.js"></script>
+    <style type="text/css">
+      body {
+      padding:0 18%;
+      background-color:#eee
+      }
+      table {
+      width:100%;
+      box-shadow:3px 3px 5px #000;
+      border:0;
+      background-color:white
+      }
+      td {padding:10px;}
+      td.title {padding:5px;text-align:center;}
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+	<td class="title"><h1>设置</h1>
+	<hr/>
+	<td/>
+      </tr>
+      <tr>
+	<td>
+	  <h2>自动分享设定</h2>
+	 <input type="checkbox" id="autoshare"/> 膜拜时自动分享
+	 <hr/>
+	</td>
+      </tr>
+      <tr>
+	<td>
+	  <div>
+	    <h2>一键膜拜设定</h2>
+	    <input type="text" id="ex">一键膜拜关键字（支持正则表达式）</input>
+	    <br />
+	    <input type="button" id="add" value="添加"/>
+	    <input type="button" id="save" value="保存"/>
+	  </div>
+	  <div id="ls">
+	    <h3>已加入的关键字</h3>
+	  </div>
+	</td>
+      </tr>
+    </table>
+  </body>
+</html>
