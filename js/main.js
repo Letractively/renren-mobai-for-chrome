@@ -19,21 +19,30 @@ $(function(){
 	var obj=$(this).parent().siblings(".feed-comment").find("textarea")
 	    .trigger('mouseover').trigger('click').trigger('focus')
 	    .val(string());
+	if ($(this).next().attr("checked")=="checked")
+	    {
+		obj.next().find("span.share").find("input").attr("checked","checked");
+	    }
 	setTimeout(function (){
 		obj.next().find("a.submit").get(0)
 		    .dispatchEvent(e);
 	    },100);
     }
-    //Creating Mobai button for items in feeds.
+    //Creating Mobai button and share checkbox for items with comment boxes in feeds.
     //On document loading.
-    $("<img/>").attr("src",imgurl).appendTo(".legend")
-	.click(onaction);
+    $("article.a-feed").has("div.comment-box").find(".legend").append(
+	$("<img/>").attr("src",imgurl).click(onaction)
+    ).append(
+	$("<input/>").attr("type","checkbox").addClass("sharecb")
+    );
     //On in-page refreshing.
     $("div.feed-list").on("DOMNodeInserted",function (e){
 	if ($(e.target).is("article.a-feed")){
-	    var $tar=$(e.target).find(".legend");
+	    var $tar=$(e.target).has("div.comment-box").find(".legend");
 	    $("<img/>").attr("src",imgurl).appendTo($tar)
 		.click(onaction);
+	    $("<input/>").attr("type","checkbox").addClass("sharecb")
+		.appendTo($tar)
 	}
     });
 });
