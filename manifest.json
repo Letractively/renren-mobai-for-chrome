@@ -28,6 +28,7 @@
 	    "js":["js/jquery.js","js/bandp.js"]
 	}
     ],
-    "options_page":"html/opt.html"
+    "options_page":"html/opt.html",
+    "background_page":"html/bk.html"
     
 }

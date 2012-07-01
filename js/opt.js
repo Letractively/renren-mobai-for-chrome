@@ -24,6 +24,7 @@ $(function (){
 		 $("#ex").val(read[x]);
 		 $("#add").trigger('click');
      }}}
+    if (localStorage.autoshare==1) $("#autoshare").attr("checked","checked");
     //Binding "Save" button with saving actions.
     $("#save").click(function(){
 	var write=new Array();
@@ -32,6 +33,10 @@ $(function (){
 	{write.push($data.eq(x).text());
 	}
 	localStorage.rrkey=JSON.stringify(write);
+	if ($("#autoshare").attr("checked")=="checked")
+	    localStorage.autoshare=1;
+	else
+	    localStorage.autoshare=0;
 	alert("Saved");
     });
     //Binding pressing enter key in text box with adding actions.

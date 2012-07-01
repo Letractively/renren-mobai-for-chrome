@@ -12,6 +12,12 @@ $(function(){
 	    }
 	return txt;
     }
+    //Sending request for confirming if auto share is on
+    var auto=false;
+    chrome.extension.sendRequest({type:"localStorage",key:"autoshare"},function(response){
+	if (response==1) auto=true;
+	alert(auto);
+    });
     //Defining action function which is called while mobai button is clicked.
     function onaction(){
 	var e=document.createEvent('MouseEvents');
@@ -29,20 +35,18 @@ $(function(){
 	    },100);
     }
     //Creating Mobai button and share checkbox for items with comment boxes in feeds.
-    //On document loading.
-    $("article.a-feed").has("div.comment-box").find(".legend").append(
-	$("<img/>").attr("src",imgurl).click(onaction)
-    ).append(
-	$("<input/>").attr("type","checkbox").addClass("sharecb")
-    );
-    //On in-page refreshing.
+    var $img=$("<img/>").attr("src",imgurl).click(onaction);
+    var $ckb=$("<input/>").attr("type","checkbox").addClass("sharecb");
+    //Initializing checkboxes for auto share.
+    if (auto) $ckb.attr("checked","checked");
+    //Attach them on document loading.
+    $("article.a-feed").has("div.comment-box").find(".legend")
+	.append($img).append($ckb);
+    //Attach them on in-page refreshing.
     $("div.feed-list").on("DOMNodeInserted",function (e){
 	if ($(e.target).is("article.a-feed")){
-	    var $tar=$(e.target).has("div.comment-box").find(".legend");
-	    $("<img/>").attr("src",imgurl).appendTo($tar)
-		.click(onaction);
-	    $("<input/>").attr("type","checkbox").addClass("sharecb")
-		.appendTo($tar)
+	    $(e.target).has("div.comment-box").find(".legend")
+		.append($img).append($ckb);
 	}
     });
 });
