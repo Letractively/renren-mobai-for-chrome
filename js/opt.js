@@ -37,7 +37,7 @@ $(function (){
 	    localStorage.autoshare=1;
 	else
 	    localStorage.autoshare=0;
-	alert("Saved");
+	alert("已保存");
     });
     //Binding pressing enter key in text box with adding actions.
     $("#ex").on('keypress',function(e){
