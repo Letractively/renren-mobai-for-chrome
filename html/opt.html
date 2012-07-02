@@ -17,6 +17,8 @@
       }
       td {padding:10px;}
       td.title {padding:5px;text-align:center;}
+      #save {font-size:20px;min-width:100px;}
+      #savediv {text-align:center;}
     </style>
   </head>
   <body>
@@ -40,13 +42,17 @@
 	    <input type="text" id="ex">一键膜拜关键字（支持正则表达式）</input>
 	    <br />
 	    <input type="button" id="add" value="添加"/>
-	    <input type="button" id="save" value="保存"/>
 	  </div>
 	  <div id="ls">
 	    <h3>已加入的关键字</h3>
 	  </div>
+	  <hr />
 	</td>
       </tr>
     </table>
+    <div id="savediv">
+      <br />
+      <input type="button" id="save" value="保存"/>
+    </div> 
   </body>
 </html>
